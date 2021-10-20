@@ -1,0 +1,40 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+/* home.jsp */
+#container-book {
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+}
+
+#container-book #center {
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+}
+
+#container-book .book img {
+	width: 200px;
+	height: 300px;
+}
+
+/* cart.jsp */
+#container-cart table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+th, td {
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: red; /* #D6EEEE */
+}
