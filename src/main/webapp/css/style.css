@@ -1,0 +1,60 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+/* home.jsp */
+#container-book {
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+}
+
+#container-book #center {
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+}
+
+#container-book .book img {
+	width: 200px;
+	height: 300px;
+}
+
+/* cart.jsp */
+#container-cart table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#container-cart td.ms {
+	display: none;
+}
+
+#container-cart table, th, td {
+	border: 1px solid black;
+}
+
+#container-cart th, td {
+	text-align: left;
+	padding: 8px;
+}
+
+#container-cart tr:nth-child(even) {
+	background-color: #D6EEEE; /* #D6EEEE */
+}
+
+/* user.jsp */
+table#user-history {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+/* register.jsp */
+#container-register table {
+	margin: auto;
+}
+#error-container {
+	text-align: center;
+	font-size: 16px;
+	color: red;
+}
