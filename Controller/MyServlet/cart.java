@@ -14,6 +14,7 @@ import bean.GioHang;
 import bean.KhachHang;
 import bean.Sach;
 import bo.GioHangBO;
+import bo.HoaDonBO;
 import bo.SachBO;
 
 @WebServlet("/cart")
@@ -58,11 +59,12 @@ public class cart extends HttpServlet {
 				break;
 			}
 			case "purchase": {
+				HoaDonBO hbo = new HoaDonBO();
 				long makh = ((KhachHang)session.getAttribute("user")).getMaKH();
-				long mahoadon = ghbo.createMaHoaDon();
-				ghbo.setHoaDon(makh);
+				long mahoadon = hbo.getHoaDon();
+				hbo.setHoaDon(makh);
 				for (GioHang gh : ghbo.getGioHang()) {
-					ghbo.purchase(gh.getMaSach(), gh.getSoLuong(), mahoadon);
+					hbo.purchase(gh.getMaSach(), gh.getSoLuong(), mahoadon);
 				}
 				
 				ghbo = new GioHangBO();
@@ -78,7 +80,7 @@ public class cart extends HttpServlet {
 				session.setAttribute("ghbo", new GioHangBO());
 			}
 
-			// move CartAttribute to ghbo
+			// move CartAttribute(selected item to buy) to ghbo
 			if (session.getAttribute("cart") != null && !session.getAttribute("cart").equals("")) {
 				GioHangBO ghbo = (GioHangBO) session.getAttribute("ghbo");
 				String[] cartSplit = ((String) session.getAttribute("cart")).split(",");

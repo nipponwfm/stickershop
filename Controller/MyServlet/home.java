@@ -50,9 +50,13 @@ public class home extends HttpServlet {
 
 				ArrayList<Loai> dsLoai = lbo.getLoai();
 				ArrayList<Sach> dsSach = sbo.getSach();
-
-				request.setAttribute("dsLoai", dsLoai);
-				request.setAttribute("dsSach", dsSach);
+				
+				if (request.getParameter("query")!=null) {
+					dsSach = sbo.TimLoai(request.getParameter("query"));
+				}
+				
+				session.setAttribute("dsLoai", dsLoai);
+				session.setAttribute("dsSach", dsSach);
 
 				rd.forward(request, response);
 			}

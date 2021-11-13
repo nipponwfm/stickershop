@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import bean.KhachHang;
-import bo.GioHangBO;
+import bo.KhachHangBO;
 
 @WebServlet("/user")
 public class user extends HttpServlet {
@@ -36,10 +36,10 @@ public class user extends HttpServlet {
 		if (session.getAttribute("user") == null) {
 			response.sendRedirect("/Java/home");
 		} else {
-			GioHangBO ghbo = new GioHangBO();
+			KhachHangBO khbo = new KhachHangBO();
 			long makh = ((KhachHang)session.getAttribute("user")).getMaKH();
 			
-			request.setAttribute("ls", ghbo.getHistory(makh));		
+			request.setAttribute("ls", khbo.getHistory(makh));		
 
 			rd.forward(request, response);
 		}

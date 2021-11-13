@@ -6,8 +6,8 @@ import bean.KhachHang;
 import dao.KhachHangDAO;
 
 public class KhachHangBO {
-	KhachHangDAO khBO = new KhachHangDAO();
-	ArrayList<KhachHang> ds = khBO.getKhachHang();
+	KhachHangDAO khDAO = new KhachHangDAO();
+	ArrayList<KhachHang> ds = khDAO.getKhachHang();
 	
 	public ArrayList<KhachHang> getKhachHang(){
 		return ds;
@@ -22,5 +22,17 @@ public class KhachHangBO {
 			}
 		}
 		return null;
+	}
+	
+	public ArrayList<String> getHistory(long makh) {
+		return khDAO.getHistory(makh);
+	}
+	
+	public String register(String fullname, String address, String number, String email, String user, String pass) {
+		return khDAO.register(fullname, address, number, email, user, pass);
+	}
+	
+	public ArrayList<String[]> admin_getUser() {
+		return khDAO.admin_getUser();
 	}
 }

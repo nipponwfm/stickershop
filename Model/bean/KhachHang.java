@@ -8,8 +8,9 @@ public class KhachHang {
 	private String email;
 	private String tendn;
 	private String matKhau;
+	private Boolean isAdmin;
 	
-	public KhachHang(long maKH, String hoTen, String diaChi, String sdt, String email, String tendn, String matKhau) {
+	public KhachHang(long maKH, String hoTen, String diaChi, String sdt, String email, String tendn, String matKhau, Boolean isAdmin) {
 		super();
 		this.maKH = maKH;
 		this.hoTen = hoTen;
@@ -18,6 +19,7 @@ public class KhachHang {
 		this.email = email;
 		this.tendn = tendn;
 		this.matKhau = matKhau;
+		this.isAdmin = isAdmin;
 	}
 
 	public KhachHang() {
@@ -71,5 +73,13 @@ public class KhachHang {
 	}
 	public void setMatKhau(String matKhau) {
 		this.matKhau = matKhau;
+	}
+	
+	public Boolean getIsAdmin() {
+		return isAdmin;
+	}
+
+	public void setIsAdmin(Boolean isAdmin) {
+		this.isAdmin = isAdmin;
 	}
 }

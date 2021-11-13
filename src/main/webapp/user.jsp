@@ -18,13 +18,13 @@
 	<table id="user-history">
 		<thead>
 			<tr>
-				<td>Book name</td>
-				<td>Author</td>
-				<td>Price</td>
-				<td>Time</td>
-				<td>Status</td>
-				<td>Amount</td>
-				<td>Total</td>
+				<td width="25%">Book name</td>
+				<td width="25%">Author</td>
+				<td width="10%">Price</td>
+				<td width="10%">Time</td>
+				<td width="10%">Status</td>
+				<td width="10%">Amount</td>
+				<td width="10%">Total</td>
 			</tr>
 		</thead>
 		<tbody>
@@ -44,7 +44,7 @@
 				<td><%=tacgia %></td>
 				<td><%=gia %></td>
 				<td><%=ngaymua %></td>
-				<td><%=damua.equals("1")?"Success":"Pending" %></td>
+				<td><%=damua.equals("1")?"Đã giao":"Đang chờ" %></td>
 				<td><%=SoLuongMua %></td>
 				<td><%=total %></td>
 			</tr>

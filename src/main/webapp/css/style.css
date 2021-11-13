@@ -4,28 +4,79 @@
 	box-sizing: border-box;
 }
 
-/* home.jsp */
-#container-book {
-	display: grid;
-	grid-template-columns: repeat(3, auto);
+input {
+	width: 100%;
 }
 
-#container-book #center {
-	display: grid;
-	grid-template-columns: repeat(3, auto);
+thead tr {
+	font-weight: bold;
 }
 
-#container-book .book img {
-	width: 200px;
-	height: 300px;
+table button {
+	width: 100%;
 }
 
-/* cart.jsp */
-#container-cart table {
+body#admin_book table, 
+#container-cart table,
+table#user-history,
+body#admin table,
+body#admin-type table,
+body#admin-user table {
 	border-collapse: collapse;
 	width: 100%;
 }
 
+/* home.jsp */
+#container-book {
+	display: grid;
+	grid-template-columns: 20% auto;
+}
+#container-book #left {
+	padding-left: 10px;
+}
+
+#container-book #left a {
+	font-size: 20px;	
+	text-decoration: none;
+}
+
+#container-book #center {
+	display: grid;
+	padding-left: 50px;
+	grid-template-columns: repeat(3, 33%);
+}
+
+#container-book .book {
+	padding-bottom: 60px;
+	position: relative;
+}
+
+#container-book .book p {
+	font-size: 20px;
+	text-align: center;
+}
+
+#container-book .book img {
+	height: 350px;
+	width: 100%;
+	padding: 10px;
+}
+
+#container-book .book img#cart-btn {
+	position: absolute;
+	top: 460px;
+	width: 100px;
+	height: 30px;
+	padding: 0px;
+	transform: translate(-50%,-50%);
+}
+
+/* header.jsp */
+.navbar #user-name {
+	cursor: pointer	
+}
+
+/* cart.jsp */
 #container-cart td.ms {
 	display: none;
 }
@@ -35,7 +86,7 @@
 }
 
 #container-cart th, td {
-	text-align: left;
+	text-align: center;
 	padding: 8px;
 }
 
@@ -43,18 +94,44 @@
 	background-color: #D6EEEE; /* #D6EEEE */
 }
 
-/* user.jsp */
-table#user-history {
-	border-collapse: collapse;
-	width: 100%;
-}
-
 /* register.jsp */
 #container-register table {
 	margin: auto;
 }
-#error-container {
+#result-container p {
 	text-align: center;
 	font-size: 16px;
-	color: red;
+}
+#result-container #error {
+	color: red;	
+}
+#result-container #success {
+	color: green;	
+}
+
+/* admin_home.jsp */
+body#admin .order-confirmed {
+	background-color: #c0c0c0;
+	opacity: 0.5;
+}
+
+body#admin .details {
+	display: none;
+}
+body#admin .details.active {
+	display: table-row;
+}
+body#admin .details ol {
+	display: grid;
+	grid-template-columns: auto auto;
+	padding-left: 50px;
+}
+body#admin .details ol li {
+	list-style-type: circle;
+	text-align: left;
+}
+
+/* admin_book.jsp */
+body#admin_book table select {
+	width: 100%;
 }

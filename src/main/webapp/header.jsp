@@ -33,7 +33,7 @@
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
 				<h4 class="modal-title">Login</h4>
 			</div>
-			<div class="modal-body">
+			<div class="modal-body" style="padding-bottom: 50px">
 				<table align="center" style="margin: auto">
 					<form action="/Java/login" method="post">
 					<tbody>
@@ -45,16 +45,13 @@
 							<td align="right">Password:</td>
 							<td><input id="Matkhau" name="pwd" type="password"></td>
 						</tr>
-						<tr style="height: 40px">
+						<tr style="height: 40px;">
 							<td></td>
 							<td><input type="Submit" value="Login"></td>
 						</tr>
 					</tbody>
 					</form>
 				</table>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			</div>
 		</div>
 

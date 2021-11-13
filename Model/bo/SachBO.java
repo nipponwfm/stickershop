@@ -46,4 +46,20 @@ public class SachBO {
 		}
 		return tam;
 	}
+	
+	public void insertBook(String name, String author, String maloai, String amount, String price, String url) {
+		sDAO.insertBook(name, author, maloai, amount, price, url);
+	}
+	
+	public void updateBook(String name, String author, String maloai, String amount, String price, String url, String masach) {
+		sDAO.updateBook(name, author, maloai, amount, price, url, masach);
+	}
+	
+	public void deleteBook(String masach) {
+		sDAO.deleteBook(masach);
+	}
+	
+	public ArrayList<String[]> admin_getBook() {
+		return sDAO.admin_getBook();
+	}
 }

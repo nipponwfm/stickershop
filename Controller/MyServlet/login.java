@@ -24,6 +24,7 @@ public class login extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session=request.getSession();
+		String url = "/Java/home";
 		
 		if (request.getParameter("signout")!=null) {
 			session.setAttribute("user", null);
@@ -35,9 +36,10 @@ public class login extends HttpServlet {
 			
 			KhachHang kh = khbo.login(user, pwd);
 			session.setAttribute("user", kh);
+			
+			if (kh.getIsAdmin()) url = "/Java/admin_home";
 		}
-		
-		response.sendRedirect("/Java/home");
+		response.sendRedirect(url);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

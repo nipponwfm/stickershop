@@ -13,4 +13,19 @@ public class LoaiBO {
 		return ds;
 	}
 	
+	public void insertLoai(String maloai, String tenloai) {
+		lDAO.insertLoai(maloai, tenloai);
+	}
+	
+	public void updateLoai(String maloai, String value) {
+		lDAO.updateLoai(maloai, value);
+	}
+	
+	public void deleteLoai(String maloai) {
+		lDAO.deleteLoai(maloai);
+	}
+	
+	public ArrayList<String[]> admin_getType() {
+		return lDAO.admin_getType();
+	}
 }
